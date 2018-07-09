@@ -196,7 +196,7 @@ export class AppBackgroundDirective implements OnInit {
     const smokeParticles = this.smokeParticles = [];
 
     /** Load the Smoke image ressource */
-    textureLoader.load('assets/images/smoke2.png', (texture) => {
+    textureLoader.load('assets/images/smoke.png', (texture) => {
       const smokeMaterial = new THREE.MeshLambertMaterial({
         color: 0xffffff,
         map: texture,
@@ -248,5 +248,4 @@ export class AppBackgroundDirective implements OnInit {
     /** Tell the browser that i want to perform an animation */
     requestAnimationFrame(this.update.bind(this));
   }
-
 }
