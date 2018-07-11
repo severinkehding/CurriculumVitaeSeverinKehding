@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  color:#ddd;
+@import 'theme';
+@import 'helper';
+@include font-face("8-Bit", "assets/font/8-BitMadness", $style: normal, $weight: normal);
+
+html {
+  font-size: 22px;
 }
+
+body {
+  color: #ddd;
+  font-family: "8-Bit";
+  @include font-size(15);
+}
+
+

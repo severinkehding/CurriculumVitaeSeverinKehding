@@ -1,0 +1,37 @@
+@import '../../theme';
+@import '../../helper';
+
+$text-blue: color($blue, 100);
+
+.landing-page {
+  @include flexbox();
+  @include justify-content(center);
+  @include box-pack(center);
+  @include align-items(center);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  z-index: 2;
+  .inner {
+    padding: 20vh 0 5rem;
+    text-align: center;
+    .landing-page-title {
+      margin: 0 0 2rem;
+      font-weight: 400;
+      font-size: 5rem;
+      text-transform: uppercase;
+      line-height: .8;
+    }
+    .landing-page-body {
+      @include font-size(20);
+      color: $text-blue;
+      width: 45rem
+    }
+    .enter-button {
+      margin-top: 2.5rem
+    }
+  }
+}

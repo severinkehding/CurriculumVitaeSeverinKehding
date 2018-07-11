@@ -134,7 +134,7 @@ export class AppBackgroundDirective implements OnInit {
       /** Define the repeat pattern of the background image to create a real grid */
       textMaterial.map.wrapS = THREE.RepeatWrapping;
       textMaterial.map.wrapT = THREE.RepeatWrapping;
-      textMaterial.map.repeat.set(30, 30);
+      textMaterial.map.repeat.set(20, 20);
       const text = new THREE.Mesh(textGeometry, textMaterial);
 
       text.position.z = 800;

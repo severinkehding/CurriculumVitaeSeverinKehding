@@ -1,0 +1,41 @@
+@import '../../theme';
+@import '../../helper';
+
+$button-yellow: color($yellow, 700);
+$yellow-40-opacity: color($yellow, 700, .4);
+
+$button-grey: color($grey, 700);
+$grey-40-opacity: color($grey, 700, .4);
+
+.button {
+  @include box-sizing (border-box);
+  @include font-size(24);
+  @include shadow (inset 0 0 0 $grey-40-opacity, 0 0 80px $grey-40-opacity);
+  @include transition (box-shadow, .3s, cubic-bezier(.25, .46, .45, .94));
+  color: $white;
+  border: 4px solid $button-grey;
+  cursor: pointer;
+  background: transparent;
+  min-width: 15rem;
+  padding: 0 1.25rem;
+  height: 4.5rem;
+  line-height: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: .175em;
+  white-space: nowrap;
+  &:hover {
+    @include shadow (inset 0 0 80px $grey-40-opacity, 0 0 160px $grey-40-opacity)
+  }
+}
+
+.button.color-yellow {
+  @include shadow (inset 0 0 0 $yellow-40-opacity, 0 0 80px $yellow-40-opacity);
+  border: 4px solid $button-yellow;
+  &:hover {
+    @include shadow (inset 0 0 80px $yellow-40-opacity, 0 0 160px $yellow-40-opacity)
+  }
+}
