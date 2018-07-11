@@ -127,7 +127,7 @@ export class AppBackgroundDirective implements OnInit {
     /** Load the Grid asset which functions as Background */
     textureLoader.load('assets/images/grid.png', (texture) => {
       const textMaterial = new THREE.MeshLambertMaterial({
-        color: 0xffffff,
+        color: 0x003057,
         map: texture,
         opacity: 1,
       });
@@ -136,6 +136,14 @@ export class AppBackgroundDirective implements OnInit {
       textMaterial.map.wrapT = THREE.RepeatWrapping;
       textMaterial.map.repeat.set(20, 20);
       const text = new THREE.Mesh(textGeometry, textMaterial);
+
+      /** Darker grid and some light ontop of it */
+      const light = new THREE.DirectionalLight(0xffffff, .3);
+      light.position.set(0, 500, 1000);
+      scene.add(light);
+      const secondLight = new THREE.DirectionalLight(0xffffff, .3);
+      secondLight.position.set(0, 500, 1000);
+      scene.add(secondLight);
 
       text.position.z = 800;
       scene.add(text);
@@ -166,12 +174,15 @@ export class AppBackgroundDirective implements OnInit {
   addLights() {
     /** Extract the Scene object and add some light to the smoke */
     const {scene} = this;
-    /** Create White light particles with 0.3 the intensity */
-    const light = new THREE.DirectionalLight(0xffffff, 0.3);
-    /** shine from bottom*/
-    light.position.set(-1, 0, 1);
+    /** Create blue particles with 0.3 the intensity */
+    const light = new THREE.HemisphereLight(0x000A11, 0x000A11, .3);
     scene.add(light);
+    const sun = new THREE.DirectionalLight(0x42a5f5, .3);
+    sun.position.set(12, 6, -7);
+    scene.add(sun);
+
   }
+
 
   /**
    * Add the Camera Scene. This projection mode is designed to mimic the way the human eye sees.
@@ -198,13 +209,13 @@ export class AppBackgroundDirective implements OnInit {
     /** Load the Smoke image ressource */
     textureLoader.load('assets/images/smoke.png', (texture) => {
       const smokeMaterial = new THREE.MeshLambertMaterial({
-        color: 0xffffff,
+        color: 0x42a5f5,
         map: texture,
         transparent: true,
       });
       /** Define the Filter of the smoke partice and the size of the object itself */
       smokeMaterial.map.minFilter = THREE.LinearFilter;
-      const smokeGeometry = new THREE.PlaneBufferGeometry(200, 200);
+      const smokeGeometry = new THREE.PlaneBufferGeometry(300, 300);
 
       const smokeMeshes = [];
       /** Limit the smoke mashes, overlapping etc. */
