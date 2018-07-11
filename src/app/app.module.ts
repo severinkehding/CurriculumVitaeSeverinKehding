@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppBackgroundModule } from '../directives/app-background/app-background.module';
+import { MainMenuModule } from '../components/main-menu/main-menu.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { AppBackgroundModule } from '../directives/app-background/app-background
   exports: [],
   imports: [
     BrowserModule,
-    AppBackgroundModule
+    AppBackgroundModule,
+    MainMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
