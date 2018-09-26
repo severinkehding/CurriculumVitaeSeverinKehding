@@ -1,0 +1,51 @@
+@import '../../theme';
+@import '../../helper';
+
+.header-menu-wrapper {
+  position: fixed;
+  right: 5rem;
+  top: 10vh;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 3;
+  line-height: .8;
+  .header-main-menu .menu-link {
+    display: inline-block;
+    color: #9a9b9d;
+    text-decoration: none;
+    font-size: .75rem;
+    margin-left: 1.66667rem;
+    position: relative;
+    text-transform: uppercase;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 150%;
+      width: 0;
+      height: 2px;
+      background: #9a9b9d;
+      -webkit-transition: width .3s cubic-bezier(.55,.085,.68,.53);
+      transition: width .3s cubic-bezier(.55,.085,.68,.53)
+    }
+    &.active {
+      pointer-events: none;
+      &:after{
+        width: 100%
+      }
+    }
+    &:hover{
+      cursor: pointer;
+      &:after{
+        width: 100%
+      }
+    }
+  }
+}
+
