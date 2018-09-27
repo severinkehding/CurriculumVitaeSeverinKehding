@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from '../../button/button.module';
 import { NgModule } from '@angular/core';
 import { ShortcutHelpDialogComponent } from './shortcut-help-dialog.component';
-import { MatButtonModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatFormFieldModule } from '@angular/material';
 
 /**
  *
@@ -20,6 +20,7 @@ import { MatButtonModule, MatDialogModule } from '@angular/material';
   imports: [
     MatDialogModule,
     MatButtonModule,
+    MatFormFieldModule,
     BrowserModule,
     ButtonModule
   ],

@@ -1,3 +1,73 @@
-.shortcut-dialog-panel{
+@import "../../../helper";
+@import "../../../flexbox";
+@import "../../../theme";
+
+$grey-base: color($grey, 400);
+$grey-superlight: color($grey, 100);
+$grey-mediumlight: color($grey, 200);
+$grey-dark: color($grey, 900);
+$grey-20-opacity: color($grey, 700, .2);
+.shortcut-dialog-panel {
   margin: 0 2rem;
+}
+
+.mod-content {
+  margin-top: 2px;
+}
+
+/**List with the shortcuts**/
+.item-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  .shortcut-container {
+    border-spacing: 0;
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    width: 600px;
+    & > mat-label {
+      color: $dark-primary-text;
+      display: table-cell;
+      font-weight: normal;
+      text-align: right;
+      vertical-align: top;
+      width: 100px
+    }
+    & > .shorcut-value {
+      display: table-cell;
+      padding-left: 10px;
+      .shortcut-key {
+        @include box-sizing (border-box);
+        @include border-radius($border-radius + px);
+        @include font-size(9);
+        @include shadow (inset 0 1 0 $grey-20-opacity, 0 0 0 8px $grey-20-opacity);
+        border: 1px solid $grey-base;
+        color: $grey-dark;
+        background-color: $grey-mediumlight;
+        display: inline-block;
+        font-family: inherit;
+        line-height: 20px;
+        margin: 0 0.1em;
+        min-width: 2em;
+        padding: 0.1em 0.6em;
+        text-align: center;
+        text-shadow: 0 1px 0 $grey-superlight;
+        vertical-align: bottom;
+      }
+    }
+    & > .shorcut-value > a {
+      word-wrap: break-word;
+      overflow-wrap: break-word
+    }
+    & + .shortcut-container {
+      margin-top: 5px
+    }
+    & > li {
+      margin-top: 0
+    }
+    & > li + li {
+      margin-top: 5px
+    }
+  }
 }
