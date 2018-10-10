@@ -22,8 +22,11 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@types/jquery": "^3.3.10",
     "@types/three": "^0.92.12",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
+    "jquery.terminal": "^1.23.2",
     "rxjs": "^6.0.0",
     "three": "^0.94.0",
     "zone.js": "^0.8.26"
